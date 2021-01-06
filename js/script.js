@@ -1,12 +1,10 @@
-//Choose a random color
-const button = document.querySelector('button')
-const body = document.querySelector('body')
-const colors = ['red', 'green', 'blue', 'yellow', 'pink', 'purple']
+let button = document.querySelector('button');
 
-body.style.backgroundColor = 'violet'
-button.addEventListener('click', changeBackground)
-
-function changeBackground(){
-const colorIndex= parseInt(Math.random()*colors.length)
-body.style.backgroundColor = colors[colorIndex]
+function random(number) {
+  return Math.floor(Math.random() * (number+1));
 }
+
+button.addEventListener('click', function(){
+  const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+  document.body.style.backgroundColor = rndCol;
+})
